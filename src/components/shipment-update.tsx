@@ -44,7 +44,7 @@ export function ShipmentUpdate({
 
     return (
         <>
-            <div className='text-pretty text-sm md:text-base flex w-full mb-24'>
+            <div className='flex w-full mb-24'>
                 {/* Event Container */}
                 <div className='pr-4 md:pr-8 w-1/3 md:w-1/2 flex gap-2 flex-col items-end'>
                     <TimeElapsed startDate={utc_date_obj.toLocaleString()} />

@@ -46,7 +46,7 @@ const TimeElapsed = ({ startDate }: any) => {
         <div>
             {/* <h1>Time Elapsed</h1> */}
             {/* <p>From {startDate} to now:</p> */}
-            <p className='text-pretty text-sm md:text-base text-muted-foreground'>{elapsedTimeShort} ago</p>
+            <p className='text-muted-foreground'>{elapsedTimeShort} ago</p>
         </div>
     );
 };

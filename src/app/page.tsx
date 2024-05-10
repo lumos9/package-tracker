@@ -5,6 +5,7 @@ import { ShipmentUpdate } from "@/components/shipment-update";
 import { TrackingItem } from "@/components/trackingItem";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Separator } from "@/components/ui/separator";
 import { X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -274,7 +275,8 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full flex flex-col items-start gap-4">
-                <div className="text-xl md:text-2xl font-bold">Updates</div>
+                <div className="text-xl md:text-2xl font-bold">Shipment Timeline</div>
+                <Separator />
                 {/* <ol className='relative border-s dark:border-neutral-600 border-neutral-400 ml-[11.5px] flex flex-col gap-8'>
                 {
                   data?.map((update, index) =>
