@@ -47,14 +47,14 @@ export function ShipmentUpdate({
             <div className='text-pretty text-sm md:text-base flex w-full mb-24'>
                 {/* Event Container */}
                 <div className='pr-4 md:pr-8 w-1/3 md:w-1/2 flex gap-2 flex-col items-end'>
-                    {/* <TimeElapsed startDate={utc_date_obj.toLocaleString()} /> */}
+                    <TimeElapsed startDate={utc_date_obj.toLocaleString()} />
                     <div className='flex flex-col md:flex-row items-end gap-2'>
                         <div>{formatDate(utc_date_obj)}</div>
                         <div className='text-muted-foreground'>{formatTime(utc_date_obj) + " " + getTimezone(utc_date_obj)}</div>
                     </div>
                 </div>
                 <div className='pl-4 md:pl-8 w-2/3 md:w-1/2 flex flex-col gap-2 items-start'>
-                    <TimeElapsed startDate={utc_date_obj.toLocaleString()} />
+                    {/* <TimeElapsed startDate={utc_date_obj.toLocaleString()} /> */}
                     <div className='font-medium'>{status}</div>
                     <div className='text-muted-foreground'>{"1 Piece ID: JD014600011540536367"}</div>
                     <div className='text-muted-foreground'>{location.city}, {location.country}</div>
