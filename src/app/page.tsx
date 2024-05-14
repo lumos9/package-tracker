@@ -6,7 +6,7 @@ import { TrackingItem } from "@/components/trackingItem";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { X } from "lucide-react";
+import { ArrowRight, MoveRight, Truck, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -228,10 +228,13 @@ export default function Home() {
   }
 
   return (
-    <main className="flex flex-col gap-8 items-center w-full p-4 md:p-8">
+    <main className="flex flex-col gap-8 justify-center w-full max-w-3xl p-4 md:p-8">
       {
         !trackingInfoFound && (
-          <div className="w-full flex flex-row gap-2 items-center justify-center">
+          <div className="w-full flex flex-col gap-8 items-center justify-center">
+            <div className="text-pretty text-4xl">Package Tracker</div>
+            <Truck size={200} strokeWidth={0.5} />
+
             <Input
               type="text"
               placeholder="Enter your tracking number"
@@ -245,12 +248,15 @@ export default function Home() {
         //   table.getColumn("email")?.setFilterValue(event.target.value)
         // }
         /> */}
-            {
+            {/* {
               searchTerm && (
                 <Button variant={"outline"} onClick={clearSearch}><X /></Button>
               )
-            }
-            <Button onClick={handleSearch}>Track</Button>
+            } */}
+            <div className="flex flex-row gap-4 items-center justify-center">
+              <Button disabled={!searchTerm} onClick={clearSearch}>Clear</Button>
+              <Button onClick={handleSearch}>Track</Button>
+            </div>
           </div>
         )
       }
@@ -263,19 +269,39 @@ export default function Home() {
         shipment && (
           <>
             <div className="w-full flex flex-col gap-8 items-center">
-              <div>{shipment.trackingId}</div>
-              <div className="w-full flex flex-row items-center justify-between">
+              <div className="w-full flex flex-col gap-4 items-center">
+                <div className="text-center text-xl md:text-3xl text-pretty font-medium">Shipment Status</div>
+              </div>
+              <div className="w-full flex flex-col gap-4 items-center">
                 <div className="flex flex-col gap-2 items-center">
-                  <div className="leading-7 font-medium">{shipment.origin.city}</div>
-                  <div className="text-muted-foreground">{shipment.origin.state}, {shipment.origin.country}</div>
+                  <div>Tracking Number</div>
+                  <div className="font-medium"> {shipment.trackingId}</div>
                 </div>
+                <Separator />
+              </div>
+              <div className="w-full flex flex-col gap-4 items-center">
                 <div className="flex flex-col gap-2 items-center">
+                  <div>Delivered</div>
+                  <div className="text-muted-foreground">{data[0].location.city}, {data[0].location.country}</div>
+                  <div className="text-muted-foreground">Time</div>
+                </div>
+                <Separator />
+              </div>
+              <div className="w-full flex flex-row items-center justify-between">
+                <div className="flex flex-col gap-1 items-start">
+                  <div className="leading-7 font-medium">{shipment.origin.city}</div>
+                  <div className="text-muted-foreground">{shipment.origin.state}</div>
+                  <div className="text-muted-foreground">{shipment.origin.country}</div>
+                </div>
+                <MoveRight size={40} />
+                <div className="flex flex-col gap-1 items-end">
                   <div className="leading-7 font-medium">{shipment.destination.city}</div>
-                  <div className="text-muted-foreground">{shipment.destination.state}, {shipment.destination.country}</div>
+                  <div className="text-muted-foreground">{shipment.destination.state}</div>
+                  <div className="text-muted-foreground">{shipment.destination.country}</div>
                 </div>
               </div>
-              <div className="w-full flex flex-col items-start gap-4">
-                <div className="text-xl md:text-2xl font-bold">Shipment Timeline</div>
+              <div className="w-full flex flex-col items-start md:items-center gap-4">
+                <div className="text-xl font-bold">Shipment Timeline</div>
                 <Separator />
                 {/* <ol className='relative border-s dark:border-neutral-600 border-neutral-400 ml-[11.5px] flex flex-col gap-8'>
                 {

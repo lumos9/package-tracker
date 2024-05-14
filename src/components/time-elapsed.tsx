@@ -43,11 +43,7 @@ const TimeElapsed = ({ startDate }: any) => {
     const elapsedTimeShort = getElapsedTimeShort(startDateParsed, now);
 
     return (
-        <div>
-            {/* <h1>Time Elapsed</h1> */}
-            {/* <p>From {startDate} to now:</p> */}
-            <p className='text-muted-foreground'>{elapsedTimeShort} ago</p>
-        </div>
+        <div>{elapsedTimeShort} ago</div>
     );
 };
 
