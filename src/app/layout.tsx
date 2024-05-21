@@ -35,7 +35,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="w-full flex flex-col min-h-screen text-pretty text-sm md:text-lg">
+          <div className="w-full flex flex-col min-h-screen text-pretty text-sm md:text-base">
             <Header items={siteConfig.mainNav} />
             <div className="flex flex-1 md:container md:mx-auto justify-center">
               {children}

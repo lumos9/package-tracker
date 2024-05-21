@@ -43,11 +43,9 @@ shipmentManager.addShipment('12345',
   'John Doe',
   'Shipped',
   { city: "Hyderabad", state: "Telangana", country: "India", countryCode: "IN" },
-  { city: "Irvine", state: "California", country: "United States", countryCode: "USA" },
+  { city: "Santa Ana", state: "California", country: "United States", countryCode: "USA" },
   [
     {
-
-
     }
   ]);
 
