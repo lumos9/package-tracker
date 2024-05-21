@@ -56,7 +56,7 @@ export function ShipmentUpdate({
                 <div className='pl-4 md:pl-8 w-2/3 md:w-1/2 flex flex-col gap-2 items-start'>
                     {/* <TimeElapsed startDate={utc_date_obj.toLocaleString()} /> */}
                     <div className='font-medium'>{status}</div>
-                    <div className='text-muted-foreground'>{"1 Piece ID: JD014600011540536367"}</div>
+                    <div className='text-muted-foreground'>{"1 Piece ID: JD349573745899385734023"}</div>
                     <div className='text-muted-foreground'>{location.city}, {location.country}</div>
                     <div className='text-muted-foreground flex flex-col md:flex-row items-start gap-0 md:gap-1'>
                         <div>{formatDate(local_time)}</div>

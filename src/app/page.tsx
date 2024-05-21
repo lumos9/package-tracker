@@ -260,7 +260,7 @@ export default function Home() {
       }
       {
         message && (
-          <div>{message}</div>
+          <div className="text-center text-red-400">{message}</div>
         )
       }
       {
